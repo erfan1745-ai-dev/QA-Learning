@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QA Demo Store</title>
+</head>
+<body>
+    <h1>QA Demo Store</h1>
+
+    <label for="customer-name">Customer name:</label>
+    <input id="customer-name" type="text">
+
+    <button id="submit-btn" type="button">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+    document.getElementById("submit-btn").addEventListener("click", () => {
+        const name = document.getElementById("customer-name").value.trim();
+        const message = document.getElementById("message");
+
+            if (name.length > 50) {
+            message.textContent = "Name must be 50 characters or fewer.";
+            } else if (name) {
+            message.textContent = `Hello, ${name}!`;
+            } else {
+                 message.textContent = "Please enter your name.";
+        }
+        });
+     </script>
+</body>
+</html>
